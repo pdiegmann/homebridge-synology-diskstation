@@ -85,9 +85,9 @@ SynologyDiskstationAccessory.prototype.getServices = function () {
 
     this.temperatureService = new Service.TemperatureSensor('System Temperature');
     this.temperatureService.getCharacteristic(Characteristic.CurrentTemperature)
-      .on('get', this.synologyAPI.getTemperature);
+      .on('get', this.synologyAPI.getTemperature.bind(this.synologyAPI));
     this.temperatureService.getCharacteristic(Characteristic.StatusActive)
-      .on('get', this.synologyAPI.isActive);
+      .on('get', this.synologyAPI.isActive.bind(this.synologyAPI));
     services.push(this.temperatureService);
 
     return services;
