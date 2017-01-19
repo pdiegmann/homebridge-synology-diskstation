@@ -61,7 +61,7 @@ SynologyDiskstationAccessory.prototype.getServices = function () {
     var services = [];
 
     this.informationService = new Service.AccessoryInformation();
-    informationService
+    this.informationService
       .setCharacteristic(Characteristic.Name, this.name)
       .setCharacteristic(Characteristic.Manufacturer, 'Synology')
       .setCharacteristic(Characteristic.Version, this.version)
@@ -70,7 +70,7 @@ SynologyDiskstationAccessory.prototype.getServices = function () {
     services.push(this.informationService);
 
     this.switchService = new Service.Switch(this.name);
-    switchService.getCharacteristic(Characteristic.On)
+    this.switchService.getCharacteristic(Characteristic.On)
       .on('get', function(callback) {
         this.synologyAPI.isActive(function(err, data) {
           if (!err && data) {
@@ -84,9 +84,9 @@ SynologyDiskstationAccessory.prototype.getServices = function () {
     services.push(this.switchService);
 
     this.temperatureService = new Service.TemperatureSensor('System Temperature');
-    tempService.getCharacteristic(Characteristic.CurrentTemperature)
+    this.tempService.getCharacteristic(Characteristic.CurrentTemperature)
       .on('get', this.synologyAPI.getTemperature.bind(this));
-    tempService.getCharacteristic(Characteristic.StatusActive)
+    this.tempService.getCharacteristic(Characteristic.StatusActive)
       .on('get', this.synologyAPI.isActive.bind(this));
     services.push(this.temperatureService);
 
