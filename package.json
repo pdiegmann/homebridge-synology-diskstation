@@ -1,0 +1,28 @@
+{
+  "name": "homebridge-synology-diskstation",
+  "version": "0.0.17",
+  "description": "Synology Diskstation support for Homebridge: https://github.com/pdiegmann/homebridge-synology",
+  "license": "ISC",
+  "keywords": [
+    "homebridge-plugin",
+    "homebridge",
+    "Synology",
+    "Diskstation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pdiegmann/homebridge-synology.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pdiegmann/homebridge-synology/issues"
+  },
+  "engines": {
+    "node": "^6.0.0",
+    "homebridge": "^0.4.0"
+  },
+  "dependencies": {
+    "request": "^2.69.0",
+    "wake_on_lan": "0.0.4",
+    "syno": "^2.1.0"
+  }
+}
