@@ -25,7 +25,7 @@ Example:
             {
                 "accessory": "SynologyDiskstation",
                 "name": "Diskstation",
-                "ip": "192.168.178.1",
+                "host": "192.168.178.1",
                 "mac": "A1:B3:C3:D4:E5:EX",
                 "port": "port number",
                 "secure": false,
