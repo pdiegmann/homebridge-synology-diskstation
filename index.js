@@ -26,7 +26,7 @@ SynologyDiskstationAccessory.prototype.updateInformationService = function(err, 
     if (this.informationService) {
       this.informationService.setCharacteristic(Characteristic.Name, this.name)
       this.informationService.setCharacteristic(Characteristic.Manufacturer, 'Synology');
-      this.informationService.setCharacteristic(Characteristic.Version, this.version);
+      this.informationService.setCharacteristic(Characteristic.SoftwareRevision, this.version);
       this.informationService.setCharacteristic(Characteristic.SerialNumber, this.serial);
     }
   } else {
