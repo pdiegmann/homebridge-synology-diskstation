@@ -30,7 +30,7 @@ SynologyDiskstationAccessory.prototype.updateInformationService = function(err, 
       this.informationService.setCharacteristic(Characteristic.SerialNumber, this.serial);
     }
   } else {
-    this.error("Something went wrong fetching disk station info: " + err);
+    this.log("Something went wrong fetching disk station info: " + err);
   }
 }
 
