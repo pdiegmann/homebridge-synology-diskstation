@@ -64,7 +64,7 @@ SynologyDiskstationAccessory.prototype.getServices = function () {
     this.informationService
       .setCharacteristic(Characteristic.Name, this.name)
       .setCharacteristic(Characteristic.Manufacturer, 'Synology')
-      .setCharacteristic(Characteristic.Version, this.version)
+      .setCharacteristic(Characteristic.SoftwareRevision, this.version)
       .setCharacteristic(Characteristic.SerialNumber, this.serial);
 
     services.push(this.informationService);
