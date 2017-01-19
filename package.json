@@ -11,10 +11,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/pdiegmann/homebridge-synology.git"
+    "url": "git://github.com/pdiegmann/homebridge-synology-diskstation.git"
   },
   "bugs": {
-    "url": "https://github.com/pdiegmann/homebridge-synology/issues"
+    "url": "https://github.com/pdiegmann/homebridge-synology-diskstation/issues"
   },
   "engines": {
     "node": "^6.0.0",
