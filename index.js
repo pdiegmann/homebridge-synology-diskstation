@@ -11,6 +11,7 @@ module.exports = function (homebridge) {
 
 function SynologyDiskstationAccessory(log, config) {
     this.log = log;
+    this.config = config;
     this.synologyAPI = new SynologyAPI(config);
     this.synologyAPI.refreshDiskStationInfo(this.updateInformationService.bind(this));
 
@@ -83,12 +84,14 @@ SynologyDiskstationAccessory.prototype.getServices = function () {
       .on('set', this.setPowerState.bind(this));
     services.push(this.switchService);
 
-    this.temperatureService = new Service.TemperatureSensor('System Temperature');
-    this.temperatureService.getCharacteristic(Characteristic.CurrentTemperature)
-      .on('get', this.synologyAPI.getTemperature.bind(this.synologyAPI));
-    this.temperatureService.getCharacteristic(Characteristic.StatusActive)
-      .on('get', this.synologyAPI.isActive.bind(this.synologyAPI));
-    services.push(this.temperatureService);
+    if (this.config.exposeSystemTemperature) {
+	    this.temperatureService = new Service.TemperatureSensor('System Temperature');
+	    this.temperatureService.getCharacteristic(Characteristic.CurrentTemperature)
+	      .on('get', this.synologyAPI.getTemperature.bind(this.synologyAPI));
+	    this.temperatureService.getCharacteristic(Characteristic.StatusActive)
+	      .on('get', this.synologyAPI.isActive.bind(this.synologyAPI));
+	    services.push(this.temperatureService);
+	}
 
     return services;
 };
