@@ -1,6 +1,6 @@
 {
   "name": "homebridge-synology-diskstation",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "description": "Synology Diskstation support for Homebridge: https://github.com/pdiegmann/homebridge-synology",
   "license": "ISC",
   "keywords": [
@@ -17,8 +17,8 @@
     "url": "https://github.com/pdiegmann/homebridge-synology-diskstation/issues"
   },
   "engines": {
-    "node": "^6.0.0",
-    "homebridge": "^0.4.0"
+    "node": ">=10.17.0",
+    "homebridge": ">=1.0.0"
   },
   "dependencies": {
     "request": "^2.69.0",
